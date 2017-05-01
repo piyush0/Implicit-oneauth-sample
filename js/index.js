@@ -15,9 +15,11 @@ $(function () {
             return !!match && match[1];
         };
         let token = extractToken(document.location.hash);
+        console.log(token);
 
         if (token) {
             $.ajax({
+                type: "GET",
                 url: RESOURCE_ENDPOINT
                 , beforeSend: function (xhr) {
                     xhr.setRequestHeader('Authorization', "Bearer " + token);
