@@ -5,7 +5,7 @@
 const clientId = '2387465280';
 const redirectUri = 'https://piyush0.github.io/Implicit-oneauth-sample';
 const AUTHORIZATION_ENDPOINT = 'http://account.codingblocks.com/oauth/authorize';
-const RESOURCE_ENDPOINT = 'https://account.codingblocks.com/api/users/me';
+const RESOURCE_ENDPOINT = 'https://api.cb.lk/api/users/me';
 
 $(function () {
     $('#signIn').click(function () {
@@ -21,7 +21,7 @@ $(function () {
             $.ajax({
                 type: "GET",
                 url: RESOURCE_ENDPOINT
-                , headers: {"Authorization": "Bearer " + token}
+                , headers: {"access-token": + token}
                 , success: function (response) {
                     console.log(response);
                 }
